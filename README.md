@@ -8,7 +8,7 @@ The OBB can also be represented as four corner points $[x_1, y_1, x_2, y_2, x_3,
 In fact, 
 **the orientation $\theta$ is just a parameter for the oriented box definition instead of indicating the intrinsic orientation of the target object**. 
 
-However, the livestock has intrinsic orientations in $[0, 2\pi)$, usually represented by head or body direction in stockbreeding context.  
+However, the livestock has intrinsic orientations in $[0, 2\pi)$, usually represented by head or body direction in stockbreeding context. 
 This intrinsic orientation is a very fundamental indicator in developing intelligent stockbreeding downstream applications, such as body size estimation, and eating activity monitoring. 
 Moreover, usually, only a single species is kept on one animal farm. 
 Therefore, we re-annotate a single-category top-view cattle object detection dataset with real-oriented bounding boxes (ROBB) annotation. 
