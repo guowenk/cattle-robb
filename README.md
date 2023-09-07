@@ -25,12 +25,39 @@ then open-source image-labeling tool [roLabelImg](https://github.com/cgvict/roLa
 raw labels are processed by python scripts. 
 
 ## Definition
-The ROBB definition in Cattle-ROBB is illustrated in as follows, 
+The ROBB definition in Cattle-ROBB is illustrated in the following image. 
 ![image](image/2a.pdf)
 $(x_c, y_c)$ is the center point, 
 $w$ and $h$ refer to along-body and cross-body dimension respectively, 
 $\theta$ represents orientation in the range $[0, 2\pi)$ and counter-clockwise rotation starting from x-axis makes positive $\theta$. 
 The following figures depict one, two, and three ROBBs in a single image respectively. 
-![image](image/2b.pdf)
-![image](image/2c.pdf)
-![image](image/2d.pdf)
+![image](image/2b.jpeg)
+![image](image/2c.jpeg)
+![image](image/2d.jpeg)
+
+## Statistics
+### Center point
+The distribution of the center point is depicted in the next figure.
+Boxes are densely distributed on top-part images because the region under surveillance is a corner on a walkway from top-left to top-right,
+hence the walking distance is shorter if cattle individuals pass this region through the top-part image area.
+![image](image/3a.pdf)
+
+### Orientation $\theta$
+The next figure shows the distribution of orientation $\theta$. 
+Note that the y-axis is logarithmic and the unit of the x-axis is converted to degree.
+Orientations concentrate on a narrow range of $[0, \pm50^{\circ})$ approximately,
+which is also due to the left-to-right walking direction under the surveillance camera.
+But dataset users can still apply data augmentation techniques like flipping and rotating to balance the orientation distribution.
+![image](image/3b.pdf)
+
+### $w/h$ ratio
+$w/h$ ratio is in a wide range from 1.0 to 4.0 and peaks at about 3.0 as shown in the next figure,
+which is consistent with our daily observation.
+Close inspections into samples near 1.0 show that cattle individuals turning their heads backward will give a small $w/h$ ratio.
+These samples enrich the non-rigid feature of cattle objects and increase detection difficulty.
+![image](image/3c.pdf)
+
+### Box-number-per-image
+The next figure shows that the majority of images contain just one ROBB,
+and about 10% images have two ROBBs. 3 and 4-ROBB samples are less.
+![image](image/3d.pdf)
